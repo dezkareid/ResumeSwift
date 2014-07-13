@@ -1,5 +1,5 @@
 //
-//  SecondViewController.swift
+//  PrincipalController.swift
 //  ResuMe
 //
 //  Created by Joel Humberto Gómez Paredes on 13/07/14.
@@ -7,19 +7,28 @@
 //
 
 import UIKit
+import QuartzCore
 
-class SecondViewController: UIViewController {
-                            
+class HomeController: UIViewController {
+    
+    
+    @IBOutlet var meImage : UIImageView
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        meImage.layer.cornerRadius = meImage.frame.width/2
+        meImage.layer.masksToBounds = true;
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
+    override func preferredStatusBarStyle()->UIStatusBarStyle
+    {
+        return UIStatusBarStyle.LightContent
+    }
 
 }
-
