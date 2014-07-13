@@ -9,7 +9,6 @@ var urlPath = "https://script.google.com/macros/s/AKfycbyx9FM2Athv6v0yuKzES1jZI7
 var url: NSURL = NSURL(string: urlPath)
 var session = NSURLSession.sharedSession()
 var task = session.dataTaskWithURL(url, completionHandler: {data, response, error -> Void in
-    println("Task completed")
     if(error) {
         // If there is an error in the web request, print it to the console
         println(error.localizedDescription)
