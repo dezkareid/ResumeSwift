@@ -13,6 +13,7 @@
 		820F0549197251ED008A37FF /* ResuMeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820F0548197251ED008A37FF /* ResuMeTests.swift */; };
 		820F055419725997008A37FF /* me.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 820F055319725997008A37FF /* me.jpg */; };
 		820F055619725B7C008A37FF /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820F055519725B7C008A37FF /* HomeController.swift */; };
+		8275BEC8198F4E4B00BAAEA7 /* CoursesControllerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8275BEC7198F4E4B00BAAEA7 /* CoursesControllerTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		820F0548197251ED008A37FF /* ResuMeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResuMeTests.swift; sourceTree = "<group>"; };
 		820F055319725997008A37FF /* me.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = me.jpg; sourceTree = "<group>"; };
 		820F055519725B7C008A37FF /* HomeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
+		8275BEC7198F4E4B00BAAEA7 /* CoursesControllerTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoursesControllerTableViewController.swift; sourceTree = "<group>"; };
 		829250AA1972810D0032E34A /* Testing.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Testing.playground; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -83,6 +85,7 @@
 				820F0539197251ED008A37FF /* Main.storyboard */,
 				829250AA1972810D0032E34A /* Testing.playground */,
 				820F055519725B7C008A37FF /* HomeController.swift */,
+				8275BEC7198F4E4B00BAAEA7 /* CoursesControllerTableViewController.swift */,
 				820F053C197251ED008A37FF /* Images.xcassets */,
 				820F0531197251ED008A37FF /* Supporting Files */,
 			);
@@ -223,6 +226,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				820F055619725B7C008A37FF /* HomeController.swift in Sources */,
+				8275BEC8198F4E4B00BAAEA7 /* CoursesControllerTableViewController.swift in Sources */,
 				820F0534197251ED008A37FF /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
