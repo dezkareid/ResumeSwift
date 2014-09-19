@@ -19,13 +19,13 @@ class CoursesControllerTableViewController: UITableViewController {
         var session = NSURLSession.sharedSession()
         var task = session.dataTaskWithURL(url, completionHandler: {data, response, error -> Void in
             println("Task completed")
-            if(error) {
+            if((error) != nil) {
                 // If there is an error in the web request, print it to the console
                 println(error.localizedDescription)
             }
             var err: NSError?
             var jsonResult = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: &err) as NSDictionary
-            if(err?) {
+            if((err?) != nil) {
                 // If there is an error parsing JSON, print it to the console
                 println("JSON Error \(err!.localizedDescription)")
             }
@@ -45,38 +45,38 @@ class CoursesControllerTableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-    override func numberOfSectionsInTableView(tableView: UITableView!) -> Int {
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Potentially incomplete method implementation.
         // Return the number of sections.
         return 1
     }
 
-    override func tableView(tableView: UITableView!, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
         return self.courses.count
     }
 
     
-    override func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell! {
-        let cell = tableView.dequeueReusableCellWithIdentifier("course", forIndexPath: indexPath) as UITableViewCell
+  override func tableView(tableView: UITableView?, cellForRowAtIndexPath indexPath: NSIndexPath?) -> UITableViewCell{
+        let cell = tableView?.dequeueReusableCellWithIdentifier("course", forIndexPath: indexPath!) as UITableViewCell as UITableViewCell
 
         // Configure the cell...
-        var course = self.courses[indexPath.row] as NSDictionary
+        var course = self.courses[indexPath!.row] as NSDictionary
         println(course["escuela"])
-        cell.textLabel.text = course["curso"] as String
+        cell.textLabel?.text = course["curso"] as? String
         
-        cell.detailTextLabel.text = course["escuela"] as String
+        cell.detailTextLabel?.text = course["escuela"] as? String
 
         var imgURL: NSURL = NSURL(string: course["imagen"] as String)
         
         let request: NSURLRequest = NSURLRequest(URL: imgURL)
         NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue(), completionHandler: {(response: NSURLResponse!,data: NSData!,error: NSError!) -> Void in
-            if !error? {
+            if !(error? != nil) {
                 var image:UIImage = UIImage(data: data)
                 
-                               if let cellToUpdate = tableView.cellForRowAtIndexPath(indexPath) {
-                    cellToUpdate.imageView.image = image
+                               if let cellToUpdate = tableView?.cellForRowAtIndexPath(indexPath!) {
+                    cellToUpdate.imageView?.image = image
                 }
             }
             else {
@@ -85,7 +85,7 @@ class CoursesControllerTableViewController: UITableViewController {
             })
         
         
-        cell.imageView.image = UIImage(named:"me.jpg")
+        cell.imageView?.image = UIImage(named:"me.jpg")
         return cell
     }
     
